@@ -1,0 +1,53 @@
+
+{
+ "notes": [
+   {
+    "id": 1,
+    "name": "React Performance Optimization fjlisadj alskdjf laksdjf alskdjfa skljflaskdfj alksjdf",
+    "tags": [
+      { "id": 1, "tag": "Dev" },
+      { "id": 2, "tag": "React" },
+      { "id": 9, "tag": "JS" },
+      { "id": 10, "tag": "CSS" },
+      { "id": 11, "tag": "go" },
+      { "id": 12, "tag": "pablo" }
+    ],
+    "lastEdited": "2024-10-29",
+    "archived": false,
+    "content": "Key performance optimization techniques:\n\n1. Code Splitting\n- Use React.Lazy() for route-base splitting.\n- Implement dynamic import for heavy components\n\n2. Memoization\n- useMemo for expensive calculations\n- UseCallBack for funciton props\n- React.memo for component optimization\n\n3. Virtual List Implementation\n- Use react-window for long lists\n- Implement Infinite scrolling\n\nTODO: Benchmark curent application and identify bottlenecks "
+  },
+  {
+    "id": 2,
+    "name": "Understanding JavaScript Closures",
+    "tags": [
+      { "id": 3, "tag": "Dev" },
+      { "id": 4, "tag": "JavaScript" }
+    ],
+    "lastEdited": "2024-11-15",
+    "archived": false,
+    "content": "Closures explained:\n- A closure gives you access to the outer function's scope from an inner function.\n- Useful for data encapsulation and maintaining state.\n- Example use cases: creating factory functions and event handlers."
+  },
+  {
+    "id": 3,
+    "name": "CSS Grid vs Flexbox",
+    "tags": [
+      { "id": 5, "tag": "Dev" },
+      { "id": 6, "tag": "CSS" }
+    ],
+    "lastEdited": "2024-11-20",
+    "archived": false,
+    "content": "Comparison between CSS Grid and Flexbox:\n- CSS Grid: Best for two-dimensional layouts.\n- Flexbox: Best for one-dimensional layouts.\n- Use both for complex, responsive designs."
+  },
+  {
+    "id": 4,
+    "name": "Introduction to GraphQL",
+    "tags": [
+      { "id": 7, "tag": "Dev" },
+      { "id": 8, "tag": "GraphQL" }
+    ],
+    "lastEdited": "2024-11-10",
+    "archived": false,
+    "content": "Getting started with GraphQL:\n- A query language for APIs and runtime for executing those queries.\n- Allows clients to request only the data they need.\n- Example: Use Apollo Server for building GraphQL APIs in JavaScript."
+  }
+ ]
+}

@@ -7,7 +7,7 @@ export const Sidebar = () => {
       <span className="flex flex-col border-b">
         <Link
           to="/notes"
-          className="p-2 [&.active]:bg-[#f4f5f9] [&.active]:font-bold"
+          className="p-2 [&.active]:bg-[#f4f5f9] [&.active]:font-bold "
         >
           All Notes
         </Link>

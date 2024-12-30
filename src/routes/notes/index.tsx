@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Sidebar } from "../../components/sidebar";
 import { Topbar } from "../../components/Topbar";
-import { Notes } from "../../components/Notes";
-
+import { Note } from "../../components/Notes/Note";
 export const Route = createFileRoute("/notes/")({
   component: RouteComponent,
 });
@@ -12,8 +11,8 @@ function RouteComponent() {
     <div className="flex flex-col lg:flex-row">
       <Sidebar />
       <div className="flex flex-col w-full">
-        <Topbar />
-        <Notes />
+        <Topbar name="Notes" />
+        <Note />
       </div>
     </div>
   );

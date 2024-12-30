@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as NotesIndexImport } from './routes/notes/index'
+import { Route as NewNoteIndexImport } from './routes/new-note/index'
 import { Route as ArchivedIndexImport } from './routes/archived/index'
 import { Route as NotesPostIdImport } from './routes/notes/$postId'
 
@@ -20,6 +21,12 @@ import { Route as NotesPostIdImport } from './routes/notes/$postId'
 const NotesIndexRoute = NotesIndexImport.update({
   id: '/notes/',
   path: '/notes/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const NewNoteIndexRoute = NewNoteIndexImport.update({
+  id: '/new-note/',
+  path: '/new-note/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -53,6 +60,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArchivedIndexImport
       parentRoute: typeof rootRoute
     }
+    '/new-note/': {
+      id: '/new-note/'
+      path: '/new-note'
+      fullPath: '/new-note'
+      preLoaderRoute: typeof NewNoteIndexImport
+      parentRoute: typeof rootRoute
+    }
     '/notes/': {
       id: '/notes/'
       path: '/notes'
@@ -68,12 +82,14 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/notes/$postId': typeof NotesPostIdRoute
   '/archived': typeof ArchivedIndexRoute
+  '/new-note': typeof NewNoteIndexRoute
   '/notes': typeof NotesIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/notes/$postId': typeof NotesPostIdRoute
   '/archived': typeof ArchivedIndexRoute
+  '/new-note': typeof NewNoteIndexRoute
   '/notes': typeof NotesIndexRoute
 }
 
@@ -81,27 +97,30 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/notes/$postId': typeof NotesPostIdRoute
   '/archived/': typeof ArchivedIndexRoute
+  '/new-note/': typeof NewNoteIndexRoute
   '/notes/': typeof NotesIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/notes/$postId' | '/archived' | '/notes'
+  fullPaths: '/notes/$postId' | '/archived' | '/new-note' | '/notes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/notes/$postId' | '/archived' | '/notes'
-  id: '__root__' | '/notes/$postId' | '/archived/' | '/notes/'
+  to: '/notes/$postId' | '/archived' | '/new-note' | '/notes'
+  id: '__root__' | '/notes/$postId' | '/archived/' | '/new-note/' | '/notes/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   NotesPostIdRoute: typeof NotesPostIdRoute
   ArchivedIndexRoute: typeof ArchivedIndexRoute
+  NewNoteIndexRoute: typeof NewNoteIndexRoute
   NotesIndexRoute: typeof NotesIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   NotesPostIdRoute: NotesPostIdRoute,
   ArchivedIndexRoute: ArchivedIndexRoute,
+  NewNoteIndexRoute: NewNoteIndexRoute,
   NotesIndexRoute: NotesIndexRoute,
 }
 
@@ -117,6 +136,7 @@ export const routeTree = rootRoute
       "children": [
         "/notes/$postId",
         "/archived/",
+        "/new-note/",
         "/notes/"
       ]
     },
@@ -125,6 +145,9 @@ export const routeTree = rootRoute
     },
     "/archived/": {
       "filePath": "archived/index.tsx"
+    },
+    "/new-note/": {
+      "filePath": "new-note/index.tsx"
     },
     "/notes/": {
       "filePath": "notes/index.tsx"

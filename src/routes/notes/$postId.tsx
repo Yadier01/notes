@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import * as data from "../../data.json";
-import { NoteSkeleton } from "../../components/NoteSkeleton";
+import { NoteSkeleton } from "../../components/Notes/NoteSkeleton";
 export const Route = createFileRoute("/notes/$postId")({
   component: RouteComponent,
 });
